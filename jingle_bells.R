@@ -17,7 +17,7 @@ bday <-
     12 * (note < 3),
   freq = 2 ^ ((note - 60) / 12) * 440)
 
-tempo <- 120
+tempo <- 180
 sample_rate <- 44100
 
 make_sine <- function(freq, duration) {
