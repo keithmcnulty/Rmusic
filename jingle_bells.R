@@ -1,3 +1,6 @@
+if(!"dplyr" %in% installed.packages()) install.packages("dplyr")
+if(!"audio" %in% installed.packages()) install.packages("audio")
+
 library("dplyr")
 library("audio")
 notes <- c(A = 0, B = 2, C = 3, D = 5, E = 7, F = 8, G = 10)
@@ -98,11 +101,11 @@ duration <- c(1, 1, 2,
               1, 0.5, 0.5, 1, 0.5, 0.5, 
               0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
               1, 0.33, 0.33, 0.33, 2)
-bday <- data_frame(pitch = strsplit(pitch, " ")[[1]],
+jbells <- data_frame(pitch = strsplit(pitch, " ")[[1]],
                    duration = duration)
 
-bday <-
-  bday %>%
+jbells <-
+  jbells %>%
   mutate(octave = substring(pitch, nchar(pitch)) %>%
   {suppressWarnings(as.numeric(.))} %>%
     ifelse(is.na(.), 4, .),
@@ -122,8 +125,8 @@ make_sine <- function(freq, duration) {
   wave * c(fade, rep(1, length(wave) - 2 * length(fade)), rev(fade))
 }
 
-bday_wave <-
-  mapply(make_sine, bday$freq, bday$duration) %>%
+jbells_wave <-
+  mapply(make_sine, jbells$freq, jbells$duration) %>%
   do.call("c", .)
 
-play(bday_wave)
+play(jbells_wave)
