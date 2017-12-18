@@ -14,13 +14,25 @@ pitch <- paste("E E E",
                "E G C D",
                "E",
                "F F F F",
-               "F E E E",
+               "F E E E E",
                "G G F D",
                "C",
                "G3 E D C",
-               "G3 G3 G3",
+               "G3",
+               "G3 G3 G3 E D C",
+               "A3",
+               "A3 F E D",
+               "B3",
+               "G G F D",
+               "E",
                "G3 E D C",
-               "A3")
+               "G3",
+               "G3 E D C",
+               "A3 A3", 
+               "A3 F E D",
+               "G G G G A G F D",
+               "C")
+
 # pitch <- tolower(pitch)
 duration <- c(1, 1, 2, 
               1, 1, 2, 
@@ -29,18 +41,30 @@ duration <- c(1, 1, 2,
               1, 1, 1, 1, 
               1, 1, 1, 1, 
               1, 1, 1, 1,
-              2, 2,1, 1, 2, 
+              2, 2,
+              1, 1, 2, 
               1, 1, 2, 
               1, 1, 1.5, 0.5, 
               4, 
               1, 1, 1, 1, 
-              1, 1, 1, 1, 
+              1, 1, 1, 0.5, 0.5, 
               1, 1, 1, 1,
               4,
-              1,1,1,1,
-              3, 0.5, 0.5,
-              1,1,1,1,
-              2)
+              1, 1, 1, 1, 
+              2.5, 
+              .5, .5, 1, 1, 1, 1, 
+              4,
+              1, 1, 1, 1, 
+              4,
+              1, 1, 1, 1, 
+              4,
+              1, 1, 1, 1, 
+              4,
+              1, 1, 1, 1, 
+              3, 1,
+              1, 1, 1, 1,
+              1, 1, 1, 1, 1, 1, 1, 1, 
+              4)
 bday <- data_frame(pitch = strsplit(pitch, " ")[[1]],
                    duration = duration)
 
@@ -55,7 +79,7 @@ bday <-
     12 * (note < 3),
   freq = 2 ^ ((note - 60) / 12) * 440)
 
-tempo <- 180
+tempo <- 250
 sample_rate <- 44100
 
 make_sine <- function(freq, duration) {
