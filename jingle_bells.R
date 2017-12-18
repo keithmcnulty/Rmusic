@@ -1,6 +1,6 @@
 library("dplyr")
 library("audio")
-notes <- c(a = 0, b = 2, c = 3, d = 5, e = 7, f = 8, g = 10)
+notes <- c(A = 0, B = 2, C = 3, D = 5, E = 7, F = 8, G = 10)
 pitch <- paste("E E E",
                "E E E",
                "E G C D",
@@ -8,8 +8,20 @@ pitch <- paste("E E E",
                "F F F F",
                "F E E E",
                "E D D E",
-               "D G")
-pitch <- tolower(pitch)
+               "D G",
+               "E E E",
+               "E E E",
+               "E G C D",
+               "E",
+               "F F F F",
+               "F E E E",
+               "G G F D",
+               "C",
+               "G3 E D C",
+               "G3 G3 G3",
+               "G3 E D C",
+               "A3")
+# pitch <- tolower(pitch)
 duration <- c(1, 1, 2, 
               1, 1, 2, 
               1, 1, 1.5, 0.5, 
@@ -17,7 +29,18 @@ duration <- c(1, 1, 2,
               1, 1, 1, 1, 
               1, 1, 1, 1, 
               1, 1, 1, 1,
-              2, 2)
+              2, 2,1, 1, 2, 
+              1, 1, 2, 
+              1, 1, 1.5, 0.5, 
+              4, 
+              1, 1, 1, 1, 
+              1, 1, 1, 1, 
+              1, 1, 1, 1,
+              4,
+              1,1,1,1,
+              3, 0.5, 0.5,
+              1,1,1,1,
+              2)
 bday <- data_frame(pitch = strsplit(pitch, " ")[[1]],
                    duration = duration)
 
