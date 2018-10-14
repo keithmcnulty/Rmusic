@@ -57,7 +57,7 @@ duration <- c(0.33, 0.33, 0.33,
               0.33, 0.33, 0.33, 2, 1, 
               1,  0.33, 0.33, 0.33, 1)
 
-
+starwars <- data_frame(pitch=strsplit(pitch, " ")[[1]], duration=duration)
 
 starwars <-
   starwars %>%
