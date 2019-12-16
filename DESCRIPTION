@@ -4,7 +4,7 @@ Title: Compose music as wav files
 Version: 0.1.0
 Authors@R: person("Keith", "McNulty", email = "keith.mcnulty@gmail.com",
                   role = c("aut", "cre"))
-Description: Turns vectors of notes into a wav file of music, which can be played or saved in the R console.
+Description: Turns vectors of notes into a wave file of music, which can be played or saved in the R console.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
