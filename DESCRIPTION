@@ -1,6 +1,6 @@
 Package: Rmusic
 Type: Package
-Title: Compose music as wav files
+Title: Compose music as wave files
 Version: 0.1.0
 Authors@R: person("Keith", "McNulty", email = "keith.mcnulty@gmail.com",
                   role = c("aut", "cre"))
