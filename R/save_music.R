@@ -3,21 +3,20 @@ library(audio)
 
 #' Save a piece of music constructed from vectors of pitch and duration as a wave file.
 #'
-#' @param notes_pitch Character vector of notes using standard musical note terminology.  Append # or b for sharp or flat semitones.  Default octave is
-#' octave 4 on a piano keyboard.  Append octave number for lower or higher octaves.
+#' @param notes_pitch Character vector of notes using standard musical note terminology.  Append # or b for sharp or flat semitones.  Default octave is octave 4 on a piano keyboard.  Append octave number for lower or higher octaves.
 #' @param notes_duration Numeric vector of corresponding note durations in beats.  Must be same length as notes_pitch.
 #' @param tempo Numeric tempo to be played in beats per minute.
-#' @output_file Path to saved output file desired (as a .wav file)
+#' @param output_file Character string path to desired file location 
 #'
 #' @return Saved wave file of music.
-#'
-#' @examples
-#'
-#' cminor_arpeggio_notes <- c("C3", "D#3", "G3", "C", "D#", "G", "C5")
-#' cminor_arpeggio_duration <- rep(2, 7)
-#' save_music(cminor_arpeggio_notes, cminor_arpeggio_notes, "cminor_arpeggio.wav")
+
 save_music <- function(notes_pitch = NULL, notes_duration = NULL, output_file = NULL, tempo = 240) {
 
+  . <- NULL
+  note <- NULL
+  octave <- NULL
+  pitch <- NULL
+  
   # set numeric value of notes
 
   notes <- c(A = 0, B = 2, C = 3, D = 5, E = 7, F = 8, G = 10)

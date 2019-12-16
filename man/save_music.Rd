@@ -8,10 +8,11 @@ save_music(notes_pitch = NULL, notes_duration = NULL,
   output_file = NULL, tempo = 240)
 }
 \arguments{
-\item{notes_pitch}{Character vector of notes using standard musical note terminology.  Append # or b for sharp or flat semitones.  Default octave is
-octave 4 on a piano keyboard.  Append octave number for lower or higher octaves.}
+\item{notes_pitch}{Character vector of notes using standard musical note terminology.  Append # or b for sharp or flat semitones.  Default octave is octave 4 on a piano keyboard.  Append octave number for lower or higher octaves.}
 
 \item{notes_duration}{Numeric vector of corresponding note durations in beats.  Must be same length as notes_pitch.}
+
+\item{output_file}{Character string path to desired file location}
 
 \item{tempo}{Numeric tempo to be played in beats per minute.}
 }
@@ -20,10 +21,4 @@ Saved wave file of music.
 }
 \description{
 Save a piece of music constructed from vectors of pitch and duration as a wave file.
-}
-\examples{
-
-cminor_arpeggio_notes <- c("C3", "D#3", "G3", "C", "D#", "G", "C5")
-cminor_arpeggio_duration <- rep(2, 7)
-save_music(cminor_arpeggio_notes, cminor_arpeggio_notes, "cminor_arpeggio.wav")
 }

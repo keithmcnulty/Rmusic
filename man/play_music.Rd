@@ -7,8 +7,7 @@
 play_music(notes_pitch = NULL, notes_duration = NULL, tempo = 240)
 }
 \arguments{
-\item{notes_pitch}{Character vector of notes using standard musical note terminology.  Append # or b for sharp of flat semitones.  Default octave is
-octave 4 on a piano keyboard.  Append octave number for lower or higher octaves.}
+\item{notes_pitch}{Character vector of notes using standard musical note terminology.  Append # or b for sharp of flat semitones.  Default octave is octave 4 on a piano keyboard.  Append octave number for lower or higher octaves.}
 
 \item{notes_duration}{Numeric vector of corresponding note durations in beats.  Must be same length as notes_pitch.}
 
@@ -19,10 +18,4 @@ Music played in R console.
 }
 \description{
 Play a piece of music constructed from vectors of pitch and duration
-}
-\examples{
-
-cminor_arpeggio_notes <- c("C3", "D#3", "G3", "C", "D#", "G", "C5")
-cminor_arpeggio_duration <- rep(2, 7)
-play_music(cminor_arpeggio_notes, cminor_arpeggio_notes)
 }
