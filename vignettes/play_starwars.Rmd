@@ -1,0 +1,85 @@
+---
+title: "Play or Save the Theme from Star Wars"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Play or Save the Theme from Star Wars}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+Create a vector for the notes of the Star Wars theme.  I like to do this by thinking about strings of notes for each bar of music and then using `strsplit()` to convert this to a vector with each note as an entry.  
+
+``` {r eval = FALSE}
+starwars_pitch <- paste(
+  "D D D",
+  "G D5",
+  "C5 B A G5 D5",
+  "C5 B A G5 D5",
+  "C5 B C5 A D D D",
+  "G D5",
+  "C5 B A G5 D5",
+  "C5 B A G5 D5",
+  "C5 B C5 A D D",
+  "E E C5 B A G",
+  "G A B A E F# D D",
+  "E E C5 B A G",
+  "D5 A D D",
+  "E E C5 B A G",
+  "G A B A E F# D5 D5",
+  "G5 F5 D#5 D5 C5 A# A G",
+  "D5 D D D",
+  "G D5",
+  "C5 B A G5 D5",
+  "C5 B A G5 D5",
+  "C5 B C5 A D D D",
+  "G D5",
+  "C5 B A G5 D5",
+  "G5 F5 D#5 Bb5 A5",
+  "G5 G G G G"
+)
+
+starwars_pitch <- strsplit(starwars_pitch, " ")[[1]]
+```
+
+Now create a similar vector with the durations of each notes as proportion of a beat.  This vector should be the same length as the notes vector.  I like to do this with a line for each bar of music.
+
+``` {r eval = FALSE}
+starwars_duration <- c(
+  0.33, 0.33, 0.33, 
+  2, 2, 
+  0.33, 0.33, 0.33, 2, 1, 
+  0.33, 0.33, 0.33, 2, 1, 
+  0.33, 0.33, 0.33, 2, 0.33, 0.33, 0.33, 
+  2, 2, 
+  0.33, 0.33, 0.33, 2, 1, 
+  0.33, 0.33, 0.33, 2, 1, 
+  0.33, 0.33, 0.33, 2, 0.75, 0.25,
+  1.5, 0.5, 0.5, 0.5, 0.5, 0.5, 
+  0.33, 0.33, 0.33, 0.75, 0.25, 1, 0.75, 0.25, 
+  1.5, 0.5, 0.5, 0.5, 0.5, 0.5,
+  1, 2, 0.75, 0.25,
+  1.5, 0.5, 0.5, 0.5, 0.5, 0.5, 
+  0.33, 0.33, 0.33, 0.75, 0.25, 1, 0.75, 0.25, 
+  0.75, 0.25, 0.75, 0.25, 0.75, 0.25, 0.75, 0.25, 
+  3, 0.33, 0.33, 0.33,   
+  2, 2, 
+  0.33, 0.33, 0.33, 2, 1, 
+  0.33, 0.33, 0.33, 2, 1, 
+  0.33, 0.33, 0.33, 2, 0.33, 0.33, 0.33, 
+  2, 2, 
+  0.33, 0.33, 0.33, 2, 1, 
+  0.33, 0.33, 0.33, 2, 1, 
+  1,  0.33, 0.33, 0.33, 1
+)
+
+```
+
+To play or save, pick the right tempo and go:
+
+``` {r eval = FALSE}
+
+play_music(starwars_pitch, starwars_duration, tempo = 160)
+
+save_music(starwars_pitch, starwars_duration, output_file = "starwars.wav", tempo = 160)
+
+```
