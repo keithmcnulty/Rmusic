@@ -10,7 +10,8 @@ Encoding: UTF-8
 LazyData: true
 Imports:
     dplyr,
-    audio
+    audio,
+    tibble
 RoxygenNote: 6.1.1
 Suggests: 
     knitr,

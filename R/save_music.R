@@ -25,7 +25,7 @@ save_music <- function(notes_pitch = NULL, notes_duration = NULL, output_file = 
   # handle octaves and set note frequency around 440 Mhz
 
   tune <-
-    data_frame(
+    tibble::data_frame(
       pitch = notes_pitch,
       duration = notes_duration
     ) %>%

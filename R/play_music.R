@@ -24,7 +24,7 @@ play_music <- function(notes_pitch = NULL, notes_duration = NULL, tempo = 240) {
   # handle octaves, semitones and set note frequency around 440 Mhz
 
   tune <-
-    data_frame(
+    tibble::data_frame(
       pitch = notes_pitch,
       duration = notes_duration
     ) %>%
