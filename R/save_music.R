@@ -3,7 +3,7 @@ library(audio)
 
 #' Save a piece of music constructed from vectors of pitch and duration as a wave file.
 #'
-#' @param notes_pitch Character vector of notes using standard musical note terminology.  Append # for semitones.  Default octave is
+#' @param notes_pitch Character vector of notes using standard musical note terminology.  Append # or b for sharp or flat semitones.  Default octave is
 #' octave 4 on a piano keyboard.  Append octave number for lower or higher octaves.
 #' @param notes_duration Numeric vector of corresponding note durations in beats.  Must be same length as notes_pitch.
 #' @param tempo Numeric tempo to be played in beats per minute.
